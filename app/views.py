@@ -55,6 +55,9 @@ def signup():
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+		# make the user follow him/herself
+        db.session.add(new_user.follow(new_user))
+        db.session.commit()
 		
         return redirect(url_for('index'))
         # return '<h1>New user has been created!</h1>'
