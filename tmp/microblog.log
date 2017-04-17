@@ -1664,3 +1664,249 @@ Traceback (most recent call last):
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
 2017-04-13 00:23:39,691 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-13 11:02:25,674 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-13 11:02:49,867 ERROR: Exception on /follow/luca.lin [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 157, in follow
+    follower_notification(user, g.user)
+  File "/srv/proj/flask/emcn/app/emails.py", line 24, in follower_notification
+    user=followed, follower=follower),
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/follower_email.txt", line 5, in top-level template code
+    {{ url_for("user", nickname=follower.nickname, _external=True) }}
+  File "/usr/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-13 15:41:57,102 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-14 01:17:58,851 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-14 01:25:32,952 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:52]
+2017-04-14 01:35:58,073 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-14 11:24:31,502 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-14 13:57:41,012 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-14 17:08:59,286 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 00:29:29,837 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 00:30:54,406 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 00:31:12,042 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 00:33:05,761 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 21:54:08,649 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 21:54:20,094 ERROR: Exception on / [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 32, in index
+    posts=posts)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 27, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/emcn/app/templates/post.html", line 8, in top-level template code
+    <div><a href="{{ url_for('delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+jinja2.exceptions.UndefinedError: '_' is undefined
+2017-04-16 22:01:29,081 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-16 22:01:32,623 ERROR: Exception on / [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 32, in index
+    posts=posts)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 27, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/emcn/app/templates/post.html", line 8, in top-level template code
+    <div><a href="{{ url_for('delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+jinja2.exceptions.UndefinedError: '_' is undefined
+2017-04-16 22:01:37,815 ERROR: Exception on /index [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 32, in index
+    posts=posts)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 27, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/emcn/app/templates/post.html", line 8, in top-level template code
+    <div><a href="{{ url_for('delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+jinja2.exceptions.UndefinedError: '_' is undefined
+2017-04-16 22:01:46,846 ERROR: Exception on /index [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 32, in index
+    posts=posts)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 27, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/emcn/app/templates/post.html", line 8, in top-level template code
+    <div><a href="{{ url_for('delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+jinja2.exceptions.UndefinedError: '_' is undefined
+2017-04-16 22:07:20,352 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-17 11:20:22,429 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:54]
+2017-04-17 11:20:26,834 ERROR: Exception on / [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 32, in index
+    posts=posts)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/emcn/app/templates/index.html", line 27, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/emcn/app/templates/post.html", line 3, in top-level template code
+    <td width="70px"><a href="{{ url_for('user', username=post.author.username) }}"><img src="{{ url_for('avatar',text = user.username )}}" /></a></td>
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined

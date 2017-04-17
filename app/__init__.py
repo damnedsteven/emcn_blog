@@ -3,6 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from config import basedir, SQLALCHEMY_DATABASE_URI, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, DOMAIN
 from .momentjs import momentjs
 
+from flask_avatar import Avatar
+
+
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -27,7 +30,8 @@ mail = Mail(app)
 
 ###
 from app import views, models
-
+###
+Avatar(app)
 
 if not app.debug:
     import logging

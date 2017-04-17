@@ -9,7 +9,10 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://sa:support@MSSQL-PYTHON-TEST'
+if os.environ.get('DATABASE_URL') is None:
+    SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://sa:support@MSSQL-PYTHON-TEST'
+else:
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
@@ -25,11 +28,14 @@ DOMAIN = 'hpe.com'
 ADMINS = ['yi.li5@hpe.com']
 
 # pagination
-POSTS_PER_PAGE = 3
+POSTS_PER_PAGE = 5
 
 # initialize search
 # WHOOSH_BASE = os.path.join(basedir, 'search.db')
 MAX_SEARCH_RESULTS = 50
+
+AVATAR_URL = '/avatar' #The avatar url,default '/avatar/<text>/<width>'
+AVATAR_RANGE = [0,512] #set avatar range to allow generate,if disallow,abort(404).Default [0,512]
 
 class Config(object):
     DEBUG = False
