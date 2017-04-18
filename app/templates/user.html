@@ -10,15 +10,45 @@
         <h1>{{ user.username }}</h1>
         {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
         {% if user.last_seen %}<p><em>Last seen: {{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
-        <p>Followers: {{ user.followers.count() - 1 }} | Following: {{ user.followed.count() - 1 }} |
-        {% if user.id == g.user.id %}
-            <a href="{{url_for('edit')}}">Edit your profile</a>
-        {% elif not g.user.is_following(user) %}
-            <a href="{{url_for('follow', username=user.username)}}">Follow</a>
-        {% else %}
-            <a href="{{url_for('unfollow', username=user.username)}}">Unfollow</a>
-        {% endif %}
-        </p>
+		<div class="container">	
+			<script>
+			$(document).ready(function(){
+				$('[data-toggle="popover_followers"]').popover({
+					html : true,
+					title: "Check out profiles:",
+					delay:{show:100, hide:200},
+					content: function() {
+						return content_followers();
+					}
+				});
+				$('[data-toggle="popover_following"]').popover({
+					html : true,
+					title: "Check out profiles:",
+					delay:{show:100, hide:200},
+					content: function() {
+						return content_following();
+					}
+				});
+			});
+			function content_followers() {
+				var data = $("{% for follower in user.followers %} {% if follower.username != user.username %} <a href='{{ url_for('user', username=follower.username) }}'>{{ follower.username }}</a>, {% endif %} {% endfor %}");
+				return data;
+			}
+			function content_following() {
+				var data = $("{% for following in user.followed %} {% if following.username != user.username %} <a href='{{ url_for('user', username=following.username) }}'>{{ following.username }}</a>, {% endif %} {% endfor %}");
+				return data;
+			}
+			</script>
+			<p>Followers: <a href="#" class="hover_details" data-toggle="popover_followers" data-placement="bottom" data-trigger="hover focus">{{ user.followers.count() - 1 }}</a> | Following: <a href="#" class="hover_details" data-toggle="popover_following" data-placement="bottom" data-trigger="hover focus">{{ user.followed.count() - 1 }}</a> |
+			{% if user.id == g.user.id %}
+				<a href="{{url_for('edit')}}">Edit your profile</a>
+			{% elif not g.user.is_following(user) %}
+				<a href="{{url_for('follow', username=user.username)}}">Follow</a>
+			{% else %}
+				<a href="{{url_for('unfollow', username=user.username)}}">Unfollow</a>
+			{% endif %}
+			</p>
+		</div>
     </div>
     {% for post in posts.items %}
         {% include 'post.html' %}
